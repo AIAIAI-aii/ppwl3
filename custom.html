@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Component Tabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      
+      /* Parent Tabs Container */
+      .tabs {
+        @apply flex gap-4 border-b-2 border-gray-300 p-4;
+      }
+
+      /* Default Tab Button */
+      .tab-item {
+        @apply px-6 py-2 font-semibold rounded-t-lg transition duration-300;
+        @apply bg-emerald-200 text-emerald-900;
+      }
+
+      /* Active Tab */
+      .tab-active {
+        @apply bg-purple-600 text-white;
+      }
+
+      /* Hover Effect */
+      .tab-item:hover {
+        @apply bg-emerald-400 text-white;
+      }
+
+    }
+  </style>
+
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+  <div class="tabs">
+    <button class="tab-item tab-active">Home</button>
+    <button class="tab-item">Profile</button>
+    <button class="tab-item">Settings</button>
+  </div>
+
+</body>
+</html>
