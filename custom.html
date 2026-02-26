@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Custom Component Tabs</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Tabs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <style type="text/tailwindcss">
+    <style type="text/tailwindcss">
     @layer components {
-      
-      /* Parent Tabs Container */
-      .tabs {
-        @apply flex gap-4 border-b-2 border-gray-300 p-4;
-      }
 
-      /* Default Tab Button */
-      .tab-item {
-        @apply px-6 py-2 font-semibold rounded-t-lg transition duration-300;
-        @apply bg-emerald-200 text-emerald-900;
-      }
+        .tabs-container {
+        @apply w-full max-w-md;}
 
-      /* Active Tab */
-      .tab-active {
-        @apply bg-purple-600 text-white;
-      }
+        .tabs-wrapper {
+        @apply flex border-b border-gray-300;}
 
-      /* Hover Effect */
-      .tab-item:hover {
-        @apply bg-emerald-400 text-white;
-      }
+        .tab-item {
+        @apply px-4 py-2 text-sm font-medium border-b-2 transition;}
+
+        .tab-active {
+        @apply border-purple-600 text-purple-600;}
+
+        .tab-inactive {
+        @apply border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-400;}
 
     }
-  </style>
-
+    </style>
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
+<body class="p-10">
 
-  <div class="tabs">
-    <button class="tab-item tab-active">Home</button>
-    <button class="tab-item">Profile</button>
-    <button class="tab-item">Settings</button>
-  </div>
+<div class="tabs-container">
+    <div class="tabs-wrapper">
+    <!-- Active -->
+    <button class="tab-item tab-active">Tab 1</button>
+    <!-- Inactive -->
+    <button class="tab-item tab-inactive">Tab 2</button>
+    <button class="tab-item tab-inactive">Tab 3</button>
+    </div>
+</div>
 
 </body>
 </html>
